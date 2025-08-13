@@ -9,9 +9,7 @@ function App() {
   return (
     <>
       <EmailInput />
-      <br />
       <PasswordInput />
-      <br />
       <LoginButton />
     </>
   )

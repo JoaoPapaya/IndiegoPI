@@ -3,6 +3,7 @@ function EmailInput() {
         <>
             <h2>Email:</h2>
             <input type="email" placeholder="Digite seu e-mail"/>
+            <br />
         </>
     )
 }
