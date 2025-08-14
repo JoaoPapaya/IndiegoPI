@@ -1,16 +1,14 @@
 import { useState } from 'react'
 import './App.css'
-import EmailInput from './components/EmailInput'
-import LoginButton from './components/LoginButton'
-import PasswordInput from './components/PasswordInput'
+import BarraDePesquisa from './components/BarraDePesquisa'
+import Projetos from './components/Projetos'
 
 function App() {
 
   return (
     <>
-      <EmailInput />
-      <PasswordInput />
-      <LoginButton />
+      <BarraDePesquisa />
+      <Projetos />
     </>
   )
 }
