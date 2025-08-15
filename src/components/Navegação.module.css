@@ -1,0 +1,13 @@
+.Navegação {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100vh;
+    gap: 100px;
+    padding-top: 40px;
+}
+
+.Navegação img {
+  width: 100px;
+  height: 100px;
+}
