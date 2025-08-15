@@ -1,16 +1,13 @@
-import { useState } from 'react'
-import './App.css'
-import BarraDePesquisa from './components/BarraDePesquisa'
-import Projetos from './components/Projetos'
+import BarraDePesquisa from './components/BarraDePesquisa';
+import BotaoDePerfil from './components/BotaoDePerfil';
 
 function App() {
-
   return (
     <>
       <BarraDePesquisa />
-      <Projetos />
+      <BotaoDePerfil />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

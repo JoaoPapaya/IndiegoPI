@@ -1,5 +1,37 @@
-.BarraDePesquisa {
-    background-color: gray;
-    height: 20px;
-    width: 200px;
+.inputCustom {
+    font-family: 'Outfit', Arial, sans-serif;
+  background-color: indigo;
+  border-radius: 10px;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  width: 300px;
+  
+}
+
+.formBarra {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+
+.container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  padding: 2rem;
+   margin-top: 30px;     
+    margin-right: -10px;
+}
+
+.buttonCustom {
+    font-family: 'Rubik', Arial, sans-serif;
+    display: flex;
+    justify-content: le;
+  background-color: #2d2d2d;
+  color: white;
+  border: 2;
+  padding: 9px 20px;
+  border-radius: 7px;
+  cursor: pointer;
 }

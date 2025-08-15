@@ -1,0 +1,21 @@
+.BotaoDePerfil {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100;
+    max-width: 200px;
+    border-radius: 20px;
+    height: auto;
+}
+
+.containerDireita {
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.FotoPerfil {
+    margin-top: -100px;     
+    margin-right: 400px;
+    border-radius: 50%;    
+}
