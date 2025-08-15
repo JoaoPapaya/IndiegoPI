@@ -1,5 +1,5 @@
 .h2 {
-  margin-top: 20px;
+  margin-top: 100px;
   color: #87f1ff;
 }
 
@@ -45,5 +45,5 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 80px; /* aumenta a distância para baixo */
+  margin-top: 40px; /* aumenta a distância para baixo */
 }
