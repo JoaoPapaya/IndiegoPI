@@ -11,6 +11,7 @@ function App() {
       <BarraDePesquisa />
       <BotaoDePerfil />
       <ProjetosSugeridos>
+        BUNDA
         <Projeto nome="Sugerido 1" preco={12.99}/>
         <Projeto nome="Sugerido 2" preco={20.00}/>
         <Projeto nome="Sugerido 3" preco={69.99}/>
