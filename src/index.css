@@ -11,8 +11,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.dark{
+  color: aqua ;
+    background-color: rgb(61, 61, 61);
+}
+.light{
+  color: #747bff;
+  background-color: rgb(255, 235, 235);
+}
+
 body {
-  background-color: grey;
   margin: 0;
   min-width: 320px;
   min-height: 100vh;

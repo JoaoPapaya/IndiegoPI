@@ -4,10 +4,14 @@ import ProjetosSugeridos from './components/ProjetosSugeridos';
 import ProjetosNovos from './components/ProjetosNovos';
 import Navegação  from './components/Navegação';
 import Projeto from './components/Projeto';
+import { useState } from 'react'
 
 function App() {
+      const [noturno, ToggleNoturno] = useState(false)
+
   return (
-    <div>
+    <div className={noturno ? 'dark' : 'light'}>
+      <button onClick={() => ToggleNoturno(!noturno)}>Alternar modo</button>
       <BarraDePesquisa />
       <BotaoDePerfil />
       <ProjetosSugeridos>
