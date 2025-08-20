@@ -6,6 +6,7 @@ import Navegação  from './components/Navegação';
 import Projeto from './components/Projeto';
 import { useState } from 'react'
 import TermoEstado from './components/FiltroProdutos';
+import App from './components/App';
 
 function App() {
       const [noturno, ToggleNoturno] = useState(false)
