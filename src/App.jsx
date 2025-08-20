@@ -5,17 +5,18 @@ import ProjetosNovos from './components/ProjetosNovos';
 import Navegação  from './components/Navegação';
 import Projeto from './components/Projeto';
 import { useState } from 'react'
+import TermoEstado from './components/FiltroProdutos';
 
 function App() {
       const [noturno, ToggleNoturno] = useState(false)
 
   return (
-    <div className={noturno ? 'dark' : 'light'}>
+        <div className={noturno ? 'dark' : 'light'}>
+          <TermoEstado />
       <button onClick={() => ToggleNoturno(!noturno)}>Alternar modo</button>
       <BarraDePesquisa />
       <BotaoDePerfil />
       <ProjetosSugeridos>
-        BUNDA
         <Projeto nome="Sugerido 1" preco={12.99}/>
         <Projeto nome="Sugerido 2" preco={20.00}/>
         <Projeto nome="Sugerido 3" preco={69.99}/>
@@ -27,6 +28,7 @@ function App() {
       </ProjetosNovos>
       <Navegação />
     </div>
+ 
   );
 }
 
