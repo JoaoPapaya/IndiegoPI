@@ -20,14 +20,14 @@
   justify-content: center; 
   align-items: center;     
   padding: 2rem;
-   margin-top: 30px;     
+   margin-top: 10px;     
     margin-right: -10px;
 }
 
 .buttonCustom {
     font-family: 'Rubik', Arial, sans-serif;
     display: flex;
-    justify-content: le;
+    justify-content: right;
   background-color: #2d2d2d;
   color: white;
   border: 2;

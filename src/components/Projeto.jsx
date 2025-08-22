@@ -3,11 +3,11 @@ import styles from './Projetos.module.css';
 function Projeto({ nome, preco }) {
     return (
         <div>
-                <a className={styles['icone-projeto']} href="#">
-                    {nome}
+                <p className={styles['icone-projeto']} href="#">
+                    <h2>{nome}</h2>
                     <br />
                     R${preco}
-                </a>
+                </p>
         </div>
     );
 }

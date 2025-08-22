@@ -4,7 +4,7 @@ import styles from './Projetos.module.css';
 function ProjetosNovos({ children }) {
     return (
         <div>
-            <h2 className={styles.h2}>Projetos Novos</h2>
+            <h1 className={styles.h1}>Projetos Novos</h1>
             <div className={styles.secao}>
                 {children}
             </div>

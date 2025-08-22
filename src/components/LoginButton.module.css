@@ -1,4 +1,13 @@
-.LoginButton {
-    background-color: indigo;
-    padding: 100px;
+body {
+    background-color: cyan;
+}
+
+.button{
+    padding: 12px;
+}
+
+.container {
+    display: grid;
+    align-items: center;
+    
 }

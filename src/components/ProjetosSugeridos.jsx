@@ -3,7 +3,7 @@ import styles from './Projetos.module.css';
 function ProjetosSugeridos({ children }) {
     return (
         <div>
-            <h2 className={styles.h2}>Projetos Sugeridos</h2>
+            <h1 className={styles.h1}>Projetos Sugeridos</h1>
             <div className={styles.sugeridosSecao}>
                 {children}
             </div>

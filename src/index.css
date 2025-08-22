@@ -39,3 +39,26 @@ body {
     background-color: #f9f9f9;
   }
 }
+
+.buttonDark {
+  font-family: 'Rubik', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+background-color: cyan;
+color: indigo;
+border: 2;
+padding: 12px 15px;
+border-radius: 7px;
+cursor: pointer;
+}
+.buttonLight {
+  font-family: 'Rubik', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+background-color: #2d2d2d;
+color: white;
+border: 2;
+padding: 12px 15px;
+border-radius: 7px;
+cursor: pointer;
+}
