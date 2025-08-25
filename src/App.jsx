@@ -10,6 +10,7 @@ function App() {
       </nav>
       <hr />
       <Routes>
+        <h2>oi</h2>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
       </Routes>
