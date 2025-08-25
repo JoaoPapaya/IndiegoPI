@@ -1,5 +1,5 @@
 body {
-    background-color: cyan;
+    background-color: indigo;
 }
 
 .button{
@@ -7,8 +7,11 @@ body {
 }
 
 .container {
+    width: 20px;
+    border-radius: 40px;
     padding: 100px 750px;
     display: grid;
     align-items: center;
-    
+    align-content: center;
+    background-color: black;
 }
