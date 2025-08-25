@@ -1,9 +1,9 @@
 import styles from './LoginButton.module.css';
 
-function LoginButton() {
+function LoginButton(props) {
     return (
         <div className={styles.LoginButton}>
-        <button>Entrar</button>
+        <button>{props.texto}</button>
         </div>
     )
 }

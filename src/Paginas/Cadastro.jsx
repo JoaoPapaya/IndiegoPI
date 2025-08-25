@@ -4,14 +4,14 @@ import PasswordInput from "../components/PasswordInput";
 import styles from '../components/LoginButton.module.css'
 import styles2 from '../components/BarraDePesquisa.module.css'
 
-function Login() {
+function Cadastro() {
    return (
      <div className={styles.container}>
       <EmailInput className={styles2.inputCustom}/>
       <PasswordInput />
-      <LoginButton texto='teste'/>
+      <LoginButton />
      </div>
    );
  }
 
- export default Login;
+ export default Cadastro;
