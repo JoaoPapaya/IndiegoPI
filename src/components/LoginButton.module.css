@@ -8,4 +8,18 @@
   padding: 16px 20px;
   border-radius: 7px;
   cursor: pointer;
+
+.button{
+    padding: 12px;
+}
+
+.container {
+    width: 20px;
+    border-radius: 40px;
+    padding: 100px 750px;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    background-color: black;
+
 }

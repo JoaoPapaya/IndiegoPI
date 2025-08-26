@@ -6,7 +6,6 @@ import styles from '../components/Login.module.css'
 function Login() {
   return (
     <div>
-
       <div className={styles.container}>
         <img src="/indieGo-icon-branco.png" alt="logo Indiego" />
         <EmailInput />
