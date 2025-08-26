@@ -21,6 +21,7 @@
 }
 
 body {
+  background-color: indigo;
   margin: 0;
   min-width: 320px;
   min-height: 100vh;

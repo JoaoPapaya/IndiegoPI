@@ -1,17 +1,11 @@
-body {
-    background-color: indigo;
-}
-
-.button{
-    padding: 12px;
-}
-
-.container {
-    width: 20px;
-    border-radius: 40px;
-    padding: 100px 750px;
-    display: grid;
-    align-items: center;
-    align-content: center;
-    background-color: black;
+.LoginButton {
+    font-family: 'Rubik', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+  background-color: #2d2d2d;
+  color: white;
+  border: 2;
+  padding: 16px 20px;
+  border-radius: 7px;
+  cursor: pointer;
 }

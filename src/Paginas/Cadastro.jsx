@@ -1,17 +1,19 @@
 import EmailInput from "../components/EmailInput"
 import LoginButton from "../components/LoginButton"
 import PasswordInput from "../components/PasswordInput";
-import styles from '../components/LoginButton.module.css'
-import styles2 from '../components/BarraDePesquisa.module.css'
+import styles from '../components/Login.module.css'
 
-function Cadastro() {
-   return (
-     <div className={styles.container}>
-      <EmailInput className={styles2.inputCustom}/>
-      <PasswordInput />
-      <LoginButton />
-     </div>
-   );
- }
+function Login() {
+  return (
+    <div>
 
- export default Cadastro;
+      <div className={styles.container}>
+        <img src="/indieGo-icon-branco.png" alt="logo Indiego" />
+        <EmailInput />
+        <PasswordInput />
+        <LoginButton texto="Criar" />
+      </div>
+    </div>
+  );
+}
+ export default Login;
