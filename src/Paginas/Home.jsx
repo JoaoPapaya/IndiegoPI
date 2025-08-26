@@ -8,8 +8,7 @@ import { useState } from 'react'
 import styles from '../components/Projetos.module.css'
 
 function Home() {
-
-      const [noturno, ToggleNoturno] = useState(false)
+  const [noturno, ToggleNoturno] = useState(false)
 
   return (
         <div className={noturno ? 'dark' : 'light'}>

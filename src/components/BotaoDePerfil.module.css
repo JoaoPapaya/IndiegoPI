@@ -19,3 +19,14 @@
     margin-right: 40px;
     border-radius: 50%;    
 }
+
+.containerCentro {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.FotoPaginaPerfil{
+    margin-top: 100px;     
+    border-radius: 50%;
+}

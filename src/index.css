@@ -17,10 +17,11 @@
 }
 .light{
   color: #747bff;
-  background-color: rgb(255, 235, 235);
+  background-color: aquamarine;
 }
 
 body {
+  background-color: indigo;
   margin: 0;
   min-width: 320px;
   min-height: 100vh;

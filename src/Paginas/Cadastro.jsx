@@ -3,17 +3,15 @@ import LoginButton from "../components/LoginButton"
 import PasswordInput from "../components/PasswordInput";
 import styles from '../components/LoginButton.module.css'
 import styles2 from '../components/BarraDePesquisa.module.css'
-import Button from "../components/Button";
 
-function Login() {
+function Cadastro() {
    return (
      <div className={styles.container}>
-      <button texto='teste'/>
       <EmailInput className={styles2.inputCustom}/>
       <PasswordInput />
-      <LoginButton texto='teste'/>
+      <LoginButton />
      </div>
    );
  }
 
- export default Login;
+ export default Cadastro;
