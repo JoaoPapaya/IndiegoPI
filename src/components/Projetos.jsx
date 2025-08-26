@@ -1,6 +1,6 @@
 import styles from './Projetos.module.css';
 
-function Projeto({ nome, preco }) {
+function Projetos({ nome, preco }) {
     return (
         <div>
             
@@ -13,4 +13,4 @@ function Projeto({ nome, preco }) {
     );
 }
 
-export default Projeto;
+export default Projetos;

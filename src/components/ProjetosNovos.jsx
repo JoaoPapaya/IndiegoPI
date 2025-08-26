@@ -6,7 +6,7 @@ function ProjetosNovos({ children }) {
         <div>
             <h1 className={styles.h1}>Projetos Novos</h1>
             <div className={styles.secao}>
-                {children}
+                    {children}
             </div>
         </div>
     );

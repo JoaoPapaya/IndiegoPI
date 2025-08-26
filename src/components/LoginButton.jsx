@@ -8,4 +8,4 @@ function LoginButton(props) {
     )
 }
 
-export default LoginButton
+export default LoginButton;
