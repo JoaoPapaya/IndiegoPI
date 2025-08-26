@@ -12,7 +12,6 @@
 
 .produto-image {
   width: 100%;
-  height: auto;
   border-radius: 4px;
 }
 
@@ -32,3 +31,5 @@
   font-size: 1rem;
   color: #777;
 }
+
+/*  */
