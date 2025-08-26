@@ -1,35 +1,34 @@
-.produto-card {
+.produtoCard {
   width: 300px;
-  border: 1px solid #ddd;
+  border: 1px solid gray;
   border-radius: 8px;
   padding: 16px;
   margin: 20px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
-  background-color: #fff;
+  background-color: gray;
   text-align: center;
 }
 
-.produto-image {
+.produtoImage {
   width: 100%;
   border-radius: 4px;
 }
 
-.produto-name {
+.produtoName {
   font-size: 1.5rem;
   margin: 12px 0 8px;
-  color: #333;
+  color:  cyan;
 }
 
-.produto-price {
+.produtoPrice {
   font-size: 1.2rem;
-  color: #2e8b57;
+  color:  cyan;
   margin: 6px 0;
 }
 
-.produto-seller {
+.produtoSeller {
   font-size: 1rem;
-  color: #777;
+  color:  cyan;
 }
-
 /*  */
