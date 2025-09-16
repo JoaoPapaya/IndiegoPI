@@ -5,12 +5,13 @@ import Produto from './Paginas/Produto';
 import Cadastro from './Paginas/Cadastro';
 import Perfil from './Paginas/Perfil'
 import Projeto from './Paginas/Projeto'
+import Usuarios from './Paginas/Usuarios';
 
 function App() {
   return (
     <div>
       <nav>
-        <Link to="/">Início</Link> | <Link to="/login">Login</Link> | <Link to="/cadastro">Cadastro</Link> | <Link to="/perfil">Perfil</Link> | <Link to="/produto">Produto</Link>
+        <Link to="/">Início</Link> | <Link to="/login">Login</Link> | <Link to="/cadastro">Cadastro</Link> | <Link to="/perfil">Perfil</Link> | <Link to="/produto">Produto</Link> | <Link to="/usuarios">Usuarios</Link>
       </nav>
       <hr />
       <Routes>
@@ -20,6 +21,7 @@ function App() {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/projeto" element={<Projeto />} />
+        <Route path="/usuarios" element={<Usuarios />} />
       </Routes>
     </div>
   );
