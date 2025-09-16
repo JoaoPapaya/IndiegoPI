@@ -17,9 +17,22 @@ function Usuarios(){
     setCarregando(false);
 }, []);
 
+    if (carregando) {
+        return <p>Carregando usuários...</p>;
+    }
 
-    return(<div className={styles.containerCentro}>
-        <button className={styles2.ButtonCustom}>Mostrar Usuarios</button>
-    </div>)
+
+    return(  
+    <div>
+        <h1>Nossos Usuários</h1>
+        <ul>
+            {usuarios.map(usuario => (
+                <li key={usuario.id}>
+                    {usuario.nome} - R$ {usuario.email}
+                </li>
+            ))}
+        </ul>
+    </div>
+)
 }
 export default Usuarios;
