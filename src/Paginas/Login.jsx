@@ -1,6 +1,6 @@
 import EmailInput from "../components/EmailInput"
 import LoginButton from "../components/LoginButton"
-import PasswordInput from "../components/PasswordInput";
+import PasswordInput from "../components/NameInput";
 import styles from '../components/Login.module.css'
 
 function Login() {
