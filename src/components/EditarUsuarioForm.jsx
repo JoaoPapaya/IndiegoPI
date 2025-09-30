@@ -7,7 +7,8 @@ function EditarUsuarioForm({ onUsuarioAtualizado }) {
 
   const [formData, setFormData] = useState({
     nome: '',
-    email: ''
+    email: '',
+    senha: ''
   });
 
   const [erro, setErro] = useState(null);
@@ -17,7 +18,7 @@ function EditarUsuarioForm({ onUsuarioAtualizado }) {
       try {
         const response = await fetch(`http://localhost:3000/usuarios/${id}`);
         const data = await response.json();
-        setFormData({ nome: data.nome, email: data.email });
+        setFormData({ nome: data.nome, email: data.email, senha: data.senha });
       } catch (error) {
         console.error("Erro ao carregar usuário:", error);
         setErro("Não foi possível carregar os dados do usuário.");
@@ -90,6 +91,15 @@ function EditarUsuarioForm({ onUsuarioAtualizado }) {
             type="text"
             name="email"
             value={formData.email}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label>Senha:</label>
+          <input
+            type="text"
+            name="senha"
+            value={formData.senha}
             onChange={handleChange}
           />
         </div>

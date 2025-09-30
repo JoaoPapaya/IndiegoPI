@@ -57,7 +57,7 @@ return (
     <ul>
         {usuarios.map(usuario => (
         <li key={usuario.id}>
-            {usuario.nome} - {usuario.email}
+            {usuario.nome} - {usuario.email} - {usuario.senha}
             <button onClick={() => handleEdit(usuario.id)}>Editar</button>  {/* Botão de edição */}
             <button onClick={() => handleDelete(usuario.id)}>Excluir</button> {/* Botão de exclusão */}
         </li>

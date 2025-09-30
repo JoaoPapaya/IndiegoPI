@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import EmailInput from "../components/EmailInput";
+import PasswordInput from "../components/PasswordInput";
 import LoginButton from "../components/LoginButton";
 import NameInput from "../components/NameInput";
 import styles from '../components/Login.module.css';
@@ -7,7 +8,8 @@ import styles from '../components/Login.module.css';
 function Login() {
   const [dadosDoFormulario, setDadosDoFormulario] = useState({
     nome: '',
-    email: ''
+    email: '',
+    senha: ''
   });
 
   // Função para lidar com as mudanças nos campos do formulário
@@ -33,7 +35,8 @@ function Login() {
         body: JSON.stringify({
           usuario: {
             nome: dadosDoFormulario.nome,
-            email: dadosDoFormulario.email
+            email: dadosDoFormulario.email,
+            senha: dadosDoFormulario.senha
           }
         }),
       });
@@ -48,7 +51,8 @@ function Login() {
       // Resetando o formulário após o envio
       setDadosDoFormulario({
         nome: '',
-        email: ''
+        email: '',
+        senha: ''
       });
     } catch (error) {
       console.error('Erro ao enviar os dados:', error);
@@ -71,7 +75,12 @@ function Login() {
             onChange={handleChange}  // Aqui o onChange chama o handleChange
             name="email"  // Nome do campo de entrada
           />
-          <LoginButton texto="Criar" />
+        <PasswordInput
+            value={dadosDoFormulario.senha}
+            onChange={handleChange}  // Aqui o onChange chama o handleChange
+            name="senha"  // Nome do campo de entrada
+          />
+          <LoginButton texto="Criar"/>
         </form>
       </div>
     </div>
