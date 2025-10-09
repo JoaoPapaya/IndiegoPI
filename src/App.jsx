@@ -14,13 +14,8 @@ function App() {
   return (
     <div>
       <nav>
-        <Link to="/">Início</Link> | <Link to="/login">Login</Link> | <Link to="/cadastro">Cadastro</Link> | <Link to="/perfil">Perfil</Link> | <Link to="/produto">Produto</Link> | <Link to="/usuarios">Usuarios</Link> | <Link to="/carrinho">Carrinho</Link>
-        <Link to="/">Início</Link> | 
-        <Link to="/login">Login</Link> | 
-        <Link to="/cadastro">Cadastro</Link> | 
-        <Link to="/perfil">Perfil</Link> | 
-        <Link to="/produto">Produto</Link> | 
-        <Link to="/usuarios">Usuarios</Link>
+        <Link to="/">Início</Link> | <Link to="/login">Login</Link> | <Link to="/cadastro">Cadastro</Link> | <Link to="/perfil">Perfil</Link> | <Link to="/produto">Produto</Link> | <Link to="/usuarios">Usuarios</Link> | <Link to="/carrinho">Carrinho</Link> |
+        <Link to="/usuarios">Usuarios</Link> | <Link to="/projeto">Criar Projeto</Link> 
       </nav>
       <hr />
       <Routes>
