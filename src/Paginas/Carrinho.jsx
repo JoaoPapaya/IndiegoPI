@@ -1,129 +1,128 @@
-import { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-function Carrinho() {
-    const [carrinho, setCarrinho] = useState([]);
-    const [carregando, setCarregando] = useState(true);
-    const [erro, setErro] = useState(null);
+export default function Carrinho() {
+  const [carrinho, setCarrinho] = useState([
+    {
+      id: 1,
+      nome: "Silksong",
+      preco: 70.0,
+      imagem:
+        "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSIO0x0FjlhSZXfkXXevg_s7KknCi0Lc6-Mxx7nCId5igxnHt3gWV92azkZwWxapsg1YnvKapEtfmp9bgL5x7TQiRSu-11Dg5baGasyazBHtw",
+      quantidade: 1,
+    },
+    {
+      id: 2,
+      nome: "Hollow Knight",
+      preco: 40.0,
+      imagem:
+        "https://cdn.cloudflare.steamstatic.com/steam/apps/367520/header.jpg",
+      quantidade: 1,
+    },
+  ]);
 
-    const usuarioId = 10;  // ID do usuário 10
+  const removerItem = (id) => {
+    setCarrinho(carrinho.filter((item) => item.id !== id));
+  };
 
-    // Carregar os produtos do carrinho do usuário
-    useEffect(() => {
-        fetch(`http://localhost:3000/carrinhos?usuario_id=${usuarioId}`)
-        .then((res) => res.json())
-        .then(async (carrinhos) => {
-            if (carrinhos.length === 0) {
-            setErro("Carrinho não encontrado.");
-            setCarregando(false);
-            return;
-            }
-            
-            const carrinhoId = carrinhos[0].id;  // Pega o id do carrinho do usuário
-            
-            // Buscar os produtos no carrinho
-            const produtosRes = await fetch(`http://localhost:3000/carrinho_produtos?carrinho_id=${carrinhoId}`);
-            const produtosData = await produtosRes.json();
-            
-            // Agora buscar os detalhes dos produtos
-            const detalhesProdutos = await Promise.all(
-            produtosData.map(async (produto) => {
-                const produtoRes = await fetch(`http://localhost:3000/produtos/${produto.produto_id}`);
-                return produtoRes.json();
-            })
-            );
-            
-            setCarrinho(detalhesProdutos);
-            setCarregando(false);
-        })
-        .catch((err) => {
-            setErro("Erro ao carregar o carrinho");
-            setCarregando(false);
-            console.error(err);
-        });
-    }, [usuarioId]);
-
-    if (carregando) {
-        return <p>Carregando carrinho...</p>;
-    }
-
-    if (erro) {
-        return <p>{erro}</p>;
-    }
-
-    // Função para remover um item do carrinho
-    const handleRemoveItem = async (produtoId) => {
-        const carrinhoRes = await fetch(`http://localhost:3000/carrinhos?usuario_id=${usuarioId}`);
-        const carrinhoData = await carrinhoRes.json();
-        const carrinhoId = carrinhoData[0].id;
-
-        const produtoNoCarrinhoRes = await fetch(`http://localhost:3000/carrinho_produtos?carrinho_id=${carrinhoId}&produto_id=${produtoId}`);
-        const produtoNoCarrinhoData = await produtoNoCarrinhoRes.json();
-
-        if (produtoNoCarrinhoData.length > 0) {
-        const produtoCarrinhoId = produtoNoCarrinhoData[0].id;
-        
-        await fetch(`http://localhost:3000/carrinho_produtos/${produtoCarrinhoId}`, {
-            method: 'DELETE',
-        });
-
-        // Atualiza a lista de carrinho após a remoção
-        setCarrinho((prevCarrinho) => prevCarrinho.filter((produto) => produto.id !== produtoId));
-        }
-    };
-
-    // Função para comprar (limpar o carrinho)
-    const handleBuy = async () => {
-        const carrinhoRes = await fetch(`http://localhost:3000/carrinhos?usuario_id=${usuarioId}`);
-        const carrinhoData = await carrinhoRes.json();
-        const carrinhoId = carrinhoData[0].id;
-
-        // Deleta todos os produtos do carrinho
-        const produtosNoCarrinhoRes = await fetch(`http://localhost:3000/carrinho_produtos?carrinho_id=${carrinhoId}`);
-        const produtosNoCarrinhoData = await produtosNoCarrinhoRes.json();
-
-        for (let item of produtosNoCarrinhoData) {
-        await fetch(`http://localhost:3000/carrinho_produtos/${item.id}`, {
-            method: 'DELETE',
-        });
-        }
-
-        // Limpa o carrinho na interface
-        setCarrinho([]);
-        alert("Compra realizada com sucesso! Carrinho limpo.");
-    };
-
-    // Calcular o preço total
-    const calcularTotal = () => {
-        return carrinho.reduce((total, produto) => total + produto.preco, 0).toFixed(2);
-    };
-
-    return (
-        <div>
-        <h1>Carrinho de Compras</h1>
-        {carrinho.length === 0 ? (
-            <p>Seu carrinho está vazio.</p>
-        ) : (
-            <ul>
-            {carrinho.map((produto) => (
-                <li key={produto.id}>
-                <h2>{produto.nome}</h2>
-                <p>{produto.descricao}</p>
-                <p>Preço: R${produto.preco}</p>
-                <button onClick={() => handleRemoveItem(produto.id)}>Remover do carrinho</button>
-                </li>
-            ))}
-            </ul>
-        )}
-
-        {/* Mostrar o preço total */}
-        {carrinho.length > 0 && (
-            <>
-            <h3>Preço Total: R${calcularTotal()}</h3>
-            <button onClick={handleBuy}>Comprar</button>
-            </>
-        )}
-        </div>
+  const alterarQuantidade = (id, delta) => {
+    setCarrinho(
+      carrinho.map((item) =>
+        item.id === id
+          ? { ...item, quantidade: Math.max(1, item.quantidade + delta) }
+          : item
+      )
     );
+  };
+
+  const total = carrinho.reduce(
+    (soma, item) => soma + item.preco * item.quantidade,
+    0
+  );
+
+  return (
+    <div style={styles.container}>
+      <h1 style={styles.titulo}>Carrinho</h1>
+
+      {carrinho.length === 0 ? (
+        <p style={styles.vazio}>Seu carrinho está vazio</p>
+      ) : (
+        <div style={styles.lista}>
+          {carrinho.map((item) => (
+            <div key={item.id} style={styles.item}>
+              <img src={item.imagem} alt={item.nome} style={styles.imagem} />
+              <div style={styles.info}>
+                <h3>{item.nome}</h3>
+                <p>R$ {item.preco.toFixed(2)}</p>
+                <div style={styles.qtd}>
+                  <button onClick={() => alterarQuantidade(item.id, -1)}>-</button>
+                  <span>{item.quantidade}</span>
+                  <button onClick={() => alterarQuantidade(item.id, +1)}>+</button>
+                </div>
+              </div>
+              <button
+                onClick={() => removerItem(item.id)}
+                style={styles.remover}
+              >
+                Remover
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div style={styles.resumo}>
+        <h2>Total: R$ {total.toFixed(2)}</h2>
+        <button style={styles.botaoFinalizar}>Finalizar Compra</button>
+      </div>
+    </div>
+  );
 }
 
-export default Carrinho;
+const styles = {
+  container: {
+    maxWidth: "800px",
+    margin: "40px auto",
+    padding: "20px",
+    backgroundColor: "#2d2d2d",
+    borderRadius: "16px",
+    boxShadow: "0 2px 8px #2d2d2d",
+    color: "#fff"
+  },
+  titulo: { textAlign: "center" },
+  lista: { display: "flex", flexDirection: "column", gap: "20px" },
+  item: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    borderBottom: "1px solid #eee",
+    paddingBottom: "10px",
+  },
+  imagem: { width: "100px", height: "100px", borderRadius: "8px" },
+  info: { flex: 1, marginLeft: "16px" },
+  qtd: { display: "flex", alignItems: "center", gap: "8px" },
+  remover: {
+    backgroundColor: "#ff4444",
+    color: "#fff",
+    border: "none",
+    padding: "8px 12px",
+    borderRadius: "8px",
+    cursor: "pointer",
+  },
+  resumo: {
+    textAlign: "right",
+    marginTop: "20px",
+  },
+  botaoFinalizar: {
+    backgroundColor: "#007bff",
+    color: "#fff",
+    border: "none",
+    padding: "10px 20px",
+    borderRadius: "8px",
+    cursor: "pointer",
+  },
+  vazio: {
+    textAlign: "center",
+    padding: "40px 0",
+    color: "#fff",
+  },
+};
