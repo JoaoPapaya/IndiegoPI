@@ -9,6 +9,10 @@ import Usuarios from './Paginas/Usuarios';
 import Carrinho from './Paginas/Carrinho';
 
 import EditarUsuarioForm from './components/EditarUsuarioForm'; // Importando o componente de edição de usuário
+import CriarProduto from './Paginas/ProdutoCadastro'
+import Produtos from './Paginas/Produtos';
+import EditarProdutoForm from './components/EditarProdutoForm';
+import Carrinho from './Paginas/Carrinho';
 
 function App() {
   return (
@@ -22,7 +26,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/produto" element={<Produto />} />
+        <Route path="/produtos" element={<Produtos />} />
         <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/cadastrar-produto" element={<CriarProduto />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/projeto" element={<Projeto />} />
         <Route path="/usuarios" element={<Usuarios />} />
